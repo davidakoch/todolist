@@ -55,3 +55,8 @@ var taskIncomplete = function() {
 		//append the task list item to the #incomplete-tasks
 }
 
+//set the click handler to the addTask function 
+addButton.onclick = addTask;
+
+
+
