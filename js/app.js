@@ -1,3 +1,9 @@
+var taskInput; //new-task
+var addButton; //first button
+var incompleteTasksHolder; //incomplete-tasks
+var completedTasksHolder; //completed-tasks
+
+
 //Add a new task
 var addTask = function() {
 	//when the button is pressed
