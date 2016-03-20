@@ -1,7 +1,7 @@
-var taskInput; //new-task
-var addButton; //first button
-var incompleteTasksHolder; //incomplete-tasks
-var completedTasksHolder; //completed-tasks
+var taskInput = document.getElementById("new-task"); //new-task
+var addButton = document.getElementsByTagName("button")[0]; //first button
+var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
+var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
 
 
 //Add a new task
