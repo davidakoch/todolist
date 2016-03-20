@@ -6,6 +6,7 @@ var completedTasksHolder = document.getElementById("completed-tasks");//complete
 
 //Add a new task
 var addTask = function() {
+	console.log("Add task....")
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
 		//create an input with a checkbox
@@ -19,6 +20,7 @@ var addTask = function() {
 
 //edit an existing task
 var editTask = function() {
+	console.log("edit task....")
 	//when the edit button is pressed
 		//if the class of the parent is .editMode
 			//switch from .editMode
@@ -32,6 +34,7 @@ var editTask = function() {
 
 //delete an existing task
 var deleteTask = function() {
+	console.log("delete task....")
 	//when the delete button is pressed
 		//remove the parent list item from the unordered list
 }
@@ -40,12 +43,14 @@ var deleteTask = function() {
 
 //mark a tast as complete
 var taskCompleted = function() {
+	console.log("task complete....")
 	//when the checkbox is checked
 		//append the task list item to the #completed-tasks
 }
 
 //mark a task as incomplete
 var taskIncomplete = function() {
+	console.log("task incomplete....")
 	//when the checkbox is unchecked
 		//append the task list item to the #incomplete-tasks
 }
