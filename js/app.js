@@ -56,6 +56,7 @@ var taskIncomplete = function() {
 }
 
 var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
+	console.log("Bind list item events");
 	//select it's children
 		//bind editTask to edit button
 		//bind deleteTask to delete button
@@ -66,10 +67,17 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 addButton.onclick = addTask;
 
 //cycle over the incompleteTasksHolder ul list items
+for(var index = 0; index < incompleteTasksHolder.children.length; i++) {
 	//for each list item
 		//bind events to list item's children (taskCompleted)
+	bindTaskEvents(incompleteTasksHolder.children[i], taskCompleted);
+}
+
 		
 
 //cycle over the completedTasksHolder ul list items
+for(var index = 0; index < completedTasksHolder.children.length; i++) {
 	//for each list item
 		//bind events to list item's children (taskIncompleted)
+	bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+}
