@@ -8,11 +8,19 @@ var createNewTaskElement = function(taskString) {
 		//create List Item
 		var listItem = document.createElement("li");
 		//create an input with a checkbox
+		var checkBox = document.createElement("input");
 		//create a label
+		var label = document.createElement("label");
 		//create an input when we edit the task
+		var editInput = document.createElement("input");
 		//creaete a button with the class of edit
+		var editButton = document.createElement("button");
 		//create a button with the class of delete
-		//each of these elements need to modified and appended
+		var deleteButton = document.createElement("button");
+		//each element needs modifying
+
+		//each element needs appending
+		
 	return listItem;
 
 }
