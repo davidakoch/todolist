@@ -3,12 +3,18 @@ var addButton = document.getElementsByTagName("button")[0]; //first button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
 
+//New Task List Item
+var createNewTaskElement = function(taskString) {
+
+}
+
 
 //Add a new task
 var addTask = function() {
 	console.log("Add task....")
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
+	createNewTaskElement("Some New Task")
 		//create an input with a checkbox
 		//create a label
 		//create an input when we edit the task
