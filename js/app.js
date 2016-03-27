@@ -41,6 +41,7 @@ var addTask = function() {
 	var listItem = createNewTaskElement("Some New Task")
 
 	//Append listItem to incompleteTasksHolder
+	incompleteTasksHolder.appendChild(listItem);
 	
 }
 
