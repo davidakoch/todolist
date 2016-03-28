@@ -74,6 +74,7 @@ var taskCompleted = function() {
 		//append the task list item to the #completed-tasks
 	var listItem = this.parentNode; 
 	completedTasksHolder.appendChild(listItem);
+	bindTaskEvents(listItem, taskIncomplete);
 }
 
 //mark a task as incomplete
@@ -82,6 +83,7 @@ var taskIncomplete = function() {
 		//append the task list item to the #incomplete-tasks
 	var listItem = this.parentNode;
 	incompleteTasksHolder.appendChild(listItem);
+	bindTaskEvents(listItem, taskCompleted);
 }
 
 var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
