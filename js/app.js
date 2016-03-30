@@ -24,6 +24,9 @@ var createNewTaskElement = function(taskString) {
 		editButton.type = "text";
 
 		editButton.innerText = "Edit";
+		deleteButton.innerText = "Delete";
+
+		label.innerText = taskString; 
 
 		//each element needs appending
 		listItem.appendChild(checkBox);
