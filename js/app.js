@@ -39,10 +39,9 @@ var addTask = function() {
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
 	var listItem = createNewTaskElement("Some New Task")
-
 	//Append listItem to incompleteTasksHolder
 	incompleteTasksHolder.appendChild(listItem);
-	
+	bindTaskEvents(listItem, taskCompleted);
 }
 
 //edit an existing task
@@ -62,8 +61,11 @@ var editTask = function() {
 //delete an existing task
 var deleteTask = function() {
 	console.log("delete task....")
-	//when the delete button is pressed
-		//remove the parent list item from the unordered list
+	
+	var listItem = this.parentNode;
+	var ul = listItem.parentNode; 
+	//remove the parent list item from the unordered list
+	ul.removeChild(listItem);
 }
 
 
