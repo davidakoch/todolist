@@ -17,7 +17,13 @@ var createNewTaskElement = function(taskString) {
 		var editButton = document.createElement("button");
 		//create a button with the class of delete
 		var deleteButton = document.createElement("button");
+		
 		//each element needs modifying
+
+		checkBox.type = "checkbox";
+		editButton.type = "text";
+
+		editButton.innerText = "Edit";
 
 		//each element needs appending
 		listItem.appendChild(checkBox);
