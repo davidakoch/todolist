@@ -33,7 +33,7 @@ var createNewTaskElement = function(taskString) {
 		//each element needs appending
 		listItem.appendChild(checkBox);
 		listItem.appendChild(label);
-		listItem.appendChild(editInput);
+		//listItem.appendChild(editInput);
 		listItem.appendChild(editButton);
 		listItem.appendChild(deleteButton);
 
@@ -49,7 +49,7 @@ var addTask = function() {
 	console.log("Add task....")
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
-	var listItem = createNewTaskElement("Some New Task")
+	var listItem = createNewTaskElement(taskInput.value);
 	//Append listItem to incompleteTasksHolder
 	incompleteTasksHolder.appendChild(listItem);
 	bindTaskEvents(listItem, taskCompleted);
@@ -58,14 +58,23 @@ var addTask = function() {
 //edit an existing task
 var editTask = function() {
 	console.log("edit task....")
-	//when the edit button is pressed
+
+	var listItem = this.parentNode;
+
+	var editInput = listItem.querySelector("input[type=text");
+	var label = listItem.querySelector("label");
+
+	var containsClass = listItem.classList.contains("editMode")
 		//if the class of the parent is .editMode
+		if(containsClass){
 			//switch from .editMode
 			//make the label text become the input's value
-		//else
+			label.innerText = editInput.value;
+		} else {
 			//switch to .editMode
 			//input value becomes the label's text
-
+			editInput.value = label.innerText;
+        }
 		//Toggle .editMode on the parent
 }
 
