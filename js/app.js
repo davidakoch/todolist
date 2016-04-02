@@ -128,18 +128,17 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 		//bind checkBoxEventHandler to the checkbox 
 	checkBox.onchange = checkBoxEventHandler;
 
-	/*var ajaxRequest = function() {
-	console.log("AJAX request");
-	}
-
-	addButton.onclick = ajaxRequest;*/
-
 }
 
-//set the click handler to the addTask function 
-addButton.onclick = addTask;
-addButton.addEventListener("click", addTask);
+var ajaxRequest = function() {
+	console.log("AJAX request");
+}
 
+
+//set the click handler to the addTask function 
+
+addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", ajaxRequest);
 
 
 
