@@ -70,32 +70,26 @@ var editTask = function() {
 	var editInput = listItem.querySelector("input[type=text]");
 	var label = listItem.querySelector("label");
 
-	//var editButton = listItem.querySelector("button[class=edit]");
-	
-
 	var containsClass = listItem.classList.contains("editMode");
 		//if the class of the parent is .editMode
-		if(containsClass) {
-			//switch from .editMode
-			//make the label text become the input's value
-			label.innerText = editInput.value;
-		
-			//when edit button is click
-			//innertext changes to save
-			editButton.innerText = "Save";
-		} else {
-			//switch to .editMode
-			//input value becomes the label's text
-			editInput.value = label.innerText;
+	if(containsClass) {
+		//switch from .editMode
+		//make the label text become the input's value
+		label.innerText = editInput.value;
+	
+	} else {
+		//switch to .editMode
+		//input value becomes the label's text
+		editInput.value = label.innerText;
 
-			//editButton.innertext = "Edit";
-
-        }
-		//Toggle .editMode on the listItem
-		listItem.classList.toggle("editMode");
+    }
+	//Toggle .editMode on the listItem
+	listItem.classList.toggle("editMode");
 
 }
 
+//switch the edit button to save button
+//during edit mode
 var changeButtonText = function() {
 
 	var listItem = this.parentNode;
@@ -106,17 +100,11 @@ var changeButtonText = function() {
 	var containsClass = listItem.classList.contains("editMode");
 
 	if(containsClass) {
-			//switch from .editMode
-			//make the label text become the input's value
-			//label.innerText = editInput.value;
-		
 			//when edit button is click
 			//innertext changes to save
 			editButton.innerText = "Save";
 		} else {
-			//switch to .editMode
-			//input value becomes the label's text
-			//editInput.value = label.innerText;
+
 
 			editButton.innertext = "Edit";
 
