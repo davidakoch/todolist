@@ -67,12 +67,18 @@ var editTask = function() {
 	var editInput = listItem.querySelector("input[type=text]");
 	var label = listItem.querySelector("label");
 
+	var editButton = listItem.querySelector("button");
+	
+
 	var containsClass = listItem.classList.contains("editMode");
 		//if the class of the parent is .editMode
 		if(containsClass) {
 			//switch from .editMode
 			//make the label text become the input's value
 			label.innerText = editInput.value;
+			//when edit button is click
+			//innertext changes to save
+			editButton.innerText = "Save";
 		} else {
 			//switch to .editMode
 			//input value becomes the label's text
@@ -121,6 +127,9 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 	var deleteButton = taskListItem.querySelector("button.delete");
 		//bind editTask to edit button
 	editButton.onclick = editTask; 
+
+		//changing button innerText to save
+	//editButton.onclick = console.log("ch, ch, changes");
 
 		//bind deleteTask to delete button
 	deleteButton.onclick = deleteTask; 
