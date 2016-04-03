@@ -3,6 +3,9 @@
 
 var taskInput = document.getElementById("new-task"); //new-task
 var addButton = document.getElementsByTagName("button")[0]; //first button
+
+var editButton = document.getElementsByTagName("button")[1]; //first button
+
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
 
@@ -67,7 +70,7 @@ var editTask = function() {
 	var editInput = listItem.querySelector("input[type=text]");
 	var label = listItem.querySelector("label");
 
-	var editButton = listItem.querySelector("button");
+	//var editButton = listItem.querySelector("button[class=edit]");
 	
 
 	var containsClass = listItem.classList.contains("editMode");
@@ -76,6 +79,7 @@ var editTask = function() {
 			//switch from .editMode
 			//make the label text become the input's value
 			label.innerText = editInput.value;
+		
 			//when edit button is click
 			//innertext changes to save
 			editButton.innerText = "Save";
@@ -83,6 +87,39 @@ var editTask = function() {
 			//switch to .editMode
 			//input value becomes the label's text
 			editInput.value = label.innerText;
+
+			//editButton.innertext = "Edit";
+
+        }
+		//Toggle .editMode on the listItem
+		listItem.classList.toggle("editMode");
+
+}
+
+var changeButtonText = function() {
+
+	var listItem = this.parentNode;
+
+	var editButton = listItem.querySelector("button[class=edit]");
+	
+
+	var containsClass = listItem.classList.contains("editMode");
+
+	if(containsClass) {
+			//switch from .editMode
+			//make the label text become the input's value
+			//label.innerText = editInput.value;
+		
+			//when edit button is click
+			//innertext changes to save
+			editButton.innerText = "Save";
+		} else {
+			//switch to .editMode
+			//input value becomes the label's text
+			//editInput.value = label.innerText;
+
+			editButton.innertext = "Edit";
+
         }
 		//Toggle .editMode on the listItem
 		listItem.classList.toggle("editMode");
@@ -128,9 +165,6 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 		//bind editTask to edit button
 	editButton.onclick = editTask; 
 
-		//changing button innerText to save
-	//editButton.onclick = console.log("ch, ch, changes");
-
 		//bind deleteTask to delete button
 	deleteButton.onclick = deleteTask; 
 
@@ -148,6 +182,10 @@ var ajaxRequest = function() {
 
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
+
+
+editButton.addEventListener("click", editTask);
+editButton.addEventListener("click", changeButtonText);
 
 
 
