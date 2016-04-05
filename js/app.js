@@ -4,7 +4,7 @@
 var taskInput = document.getElementById("new-task"); //new-task
 var addButton = document.getElementsByTagName("button")[0]; //first button
 
-var editButton = document.getElementsByTagName("button")[1]; //first button
+var editButton = document.getElementsByTagName("button")[1]; //second button
 
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
@@ -93,10 +93,7 @@ var editTask = function() {
 var changeButtonText = function() {
 
 	var listItem = this.parentNode;
-
 	var editButton = listItem.querySelector("button[class=edit]");
-	
-
 	var containsClass = listItem.classList.contains("editMode");
 
 	if(containsClass) {
@@ -171,7 +168,7 @@ var ajaxRequest = function() {
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
 
-
+//set the click handler to the editTask and changeButtonText function
 editButton.addEventListener("click", editTask);
 editButton.addEventListener("click", changeButtonText);
 
