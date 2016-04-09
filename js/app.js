@@ -71,20 +71,21 @@ var editTask = function() {
   console.log("Edit task...");
 
   var listItem = this.parentNode;
-  
+  var editButton = listItem.querySelector("button.edit");
   var editInput = listItem.querySelector("input[type=text");
   var label = listItem.querySelector("label");
-  
   var containsClass = listItem.classList.contains("editMode");
   
   //if the class of the parent is .editMode
   if(containsClass) {
     //Switch from .editMode
     //label text become the input's value
+    editButton.innerText = "Edit";
     label.innerText = editInput.value;
   } else {
     //Switch to .editMode
     //input value becomes the label's text
+    editButton.innerText = "Save";
     editInput.value = label.innerText;
   }
   
