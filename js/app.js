@@ -4,10 +4,15 @@
 var taskInput = document.getElementById("new-task"); //new-task
 var addButton = document.getElementsByTagName("button")[0]; //first button
 
-var editButton = document.getElementsByTagName("button")[1]; //second button
+var editButton = document.getElementsByTagName("button")[0]; //second button
 
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
+
+
+
+
+
 
 //New Task List Item
 var createNewTaskElement = function(taskString) {
@@ -61,55 +66,33 @@ var addTask = function() {
 	taskInput.value = "";
 }
 
-//edit an existing task
+//Edit an existing task
 var editTask = function() {
-	console.log("edit task....")
+  console.log("Edit task...");
 
-	var listItem = this.parentNode;
-
-	var editInput = listItem.querySelector("input[type=text]");
-	var label = listItem.querySelector("label");
-
-	var containsClass = listItem.classList.contains("editMode");
-		//if the class of the parent is .editMode
-	if(containsClass) {
-		//switch from .editMode
-		//make the label text become the input's value
-		label.innerText = editInput.value;
-	
-	} else {
-		//switch to .editMode
-		//input value becomes the label's text
-		editInput.value = label.innerText;
-
-    }
-	//Toggle .editMode on the listItem
-	listItem.classList.toggle("editMode");
-
+  var listItem = this.parentNode;
+  
+  var editInput = listItem.querySelector("input[type=text");
+  var label = listItem.querySelector("label");
+  
+  var containsClass = listItem.classList.contains("editMode");
+  
+  //if the class of the parent is .editMode
+  if(containsClass) {
+    //Switch from .editMode
+    //label text become the input's value
+    label.innerText = editInput.value;
+  } else {
+    //Switch to .editMode
+    //input value becomes the label's text
+    editInput.value = label.innerText;
+  }
+  
+  //Toggle .editMode on the list item
+  listItem.classList.toggle("editMode");
+  
 }
 
-//switch the edit button to save button
-//during edit mode
-var changeButtonText = function() {
-
-	var listItem = this.parentNode;
-	var editButton = listItem.querySelector("button[class=edit]");
-	var containsClass = listItem.classList.contains("editMode");
-
-	if(containsClass) {
-			//when edit button is click
-			//innertext changes to save
-			editButton.innerText = "Save";
-		} else {
-
-
-			editButton.innertext = "Edit";
-
-        }
-		//Toggle .editMode on the listItem
-		listItem.classList.toggle("editMode");
-
-}
 
 //delete an existing task
 var deleteTask = function() {
@@ -156,11 +139,11 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 		//bind checkBoxEventHandler to the checkbox 
 	checkBox.onchange = checkBoxEventHandler;
 
-}
+};
 
 var ajaxRequest = function() {
 	console.log("AJAX request");
-}
+};
 
 
 //set the click handler to the addTask function 
@@ -170,7 +153,7 @@ addButton.addEventListener("click", ajaxRequest);
 
 //set the click handler to the editTask and changeButtonText function
 editButton.addEventListener("click", editTask);
-editButton.addEventListener("click", changeButtonText);
+
 
 
 
