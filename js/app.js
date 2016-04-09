@@ -58,7 +58,6 @@ var addTask = function() {
 	console.log("Add task....")
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
-	var editInput = document.createElement("input"); // text
 	var listItem = createNewTaskElement(taskInput.value);
 	//Append listItem to incompleteTasksHolder
 	incompleteTasksHolder.appendChild(listItem);
@@ -66,8 +65,11 @@ var addTask = function() {
 
 	taskInput.value = "";
 
+	var editInput = document.createElement("input"); // text
+
 		//create an alert if nothing in add task 
 	if(editInput.value === ""){
+		incompleteTasksHolder.removeChild(listItem);
 		alert("please enter a task");
 	}
 }
