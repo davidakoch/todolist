@@ -59,19 +59,19 @@ var addTask = function() {
 	//when the button is pressed
 	//create a new list item in todo with the text from #new-task:
 	var listItem = createNewTaskElement(taskInput.value);
-	//Append listItem to incompleteTasksHolder
-	incompleteTasksHolder.appendChild(listItem);
-	bindTaskEvents(listItem, taskCompleted);
 
-	taskInput.value = "";
 
-	var editInput = document.createElement("input"); // text
-
-		//create an alert if nothing in add task 
-	if(editInput.value === ""){
+	
+	if(taskInput.length < 1){
 		incompleteTasksHolder.removeChild(listItem);
 		alert("please enter a task");
-	}
+	} /*else {
+			//Append listItem to incompleteTasksHolder
+		incompleteTasksHolder.appendChild(listItem);
+		bindTaskEvents(listItem, taskCompleted);
+	}*/
+
+	taskInput.value = "";
 }
 
 //Edit an existing task
@@ -180,4 +180,4 @@ for(var i = 0; i < completedTasksHolder.children.length; i++) {
 	//for each list item
 		//bind events to list item's children (taskIncomplete)
 	bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
-}
+};
