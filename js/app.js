@@ -56,22 +56,42 @@ var createNewTaskElement = function(taskString) {
 //Add a new task
 var addTask = function() {
 	console.log("Add task....")
-	//when the button is pressed
-	//create a new list item in todo with the text from #new-task:
+
 	var listItem = createNewTaskElement(taskInput.value);
 
+	if (!taskInput.value){
+		alert ("Please Enter a Task");
 
-	
-	if(taskInput.length < 1){
 		incompleteTasksHolder.removeChild(listItem);
+	}
+	//when the button is pressed
+	//create a new list item in todo with the text from #new-task:
+	//var listItem = createNewTaskElement(taskInput.value);
+	  //Append listItem to incompleteTasksHolder
+  		incompleteTasksHolder.appendChild(listItem);
+  		bindTaskEvents(listItem, taskCompleted);
+  
+  		taskInput.value = "";
+
+
+	/*var taskInputValue = taskInput.Value; 
+
+	if(taskInputValue === ""){
 		alert("please enter a task");
-	} /*else {
-			//Append listItem to incompleteTasksHolder
+
+
+	} else {
+
+		var listItem = createNewTaskElement(taskInput.value);
+
 		incompleteTasksHolder.appendChild(listItem);
 		bindTaskEvents(listItem, taskCompleted);
+
+		taskInput.value = "";
+		
 	}*/
 
-	taskInput.value = "";
+
 }
 
 //Edit an existing task
