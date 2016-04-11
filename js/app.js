@@ -72,26 +72,6 @@ var addTask = function() {
   		bindTaskEvents(listItem, taskCompleted);
   
   		taskInput.value = "";
-
-
-	/*var taskInputValue = taskInput.Value; 
-
-	if(taskInputValue === ""){
-		alert("please enter a task");
-
-
-	} else {
-
-		var listItem = createNewTaskElement(taskInput.value);
-
-		incompleteTasksHolder.appendChild(listItem);
-		bindTaskEvents(listItem, taskCompleted);
-
-		taskInput.value = "";
-		
-	}*/
-
-
 }
 
 //Edit an existing task
